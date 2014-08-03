@@ -11,18 +11,8 @@
     <link rel="stylesheet" href="<?= Rec::$url ?>public/highlight/styles/obsidian.css">
     <script src="<?= Rec::$url ?>public/highlight/highlight.pack.js"></script>
 
-<?php if (Rec::$controller == 'Administrator'): ?>
-    <script type="application/javascript" src="<?= Rec::$url ?>public/ckeditor/ckeditor.js"></script>
-    <link type="text/css" rel="stylesheet" href="<?= Rec::$url ?>public/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css">
-<?php endif; ?>
-
     <script type="application/javascript">
-
         hljs.initHighlightingOnLoad();
-        hljs.configure({
-            //useBR: true
-        });
-
     </script>
 
 </head>
@@ -37,7 +27,6 @@
             <a href="<?= Rec::$url ?>login">Login</a>
         <?php else: ?>
             <a href="<?= Rec::$url ?>logout">Logout</a>
-            <a href="<?= Rec::$url ?>admin">Administrator</a>
         <?php endif; ?>
     </div>
 </div>

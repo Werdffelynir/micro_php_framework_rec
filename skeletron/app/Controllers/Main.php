@@ -31,7 +31,7 @@ class Main extends ControllerBase
 
             if ($login == $tempUsername && $password == $tempPassword) {
                 Request::cookie('auth', 'admin');
-                Request::redirect('admin');
+                Request::redirect('main');
             }
         }
 

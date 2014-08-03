@@ -1,7 +1,7 @@
 <?php
 define('START_TIMER',microtime(true));
 
-include "source/Rec.php";
+include "../source/Rec.php";
 $R = new Rec('app');
 
 $R->setApplicationName("Web Application Rec");
@@ -25,7 +25,6 @@ $R->urlNotFound('Main/error404');
 $R->urlAdd('Main', 'main');
 $R->urlAdd('Main/login', 'login/{p}');
 $R->urlAdd('Main/logout', 'logout');
-$R->urlAdd('Administrator', 'admin/{w}/{n}');
 
 $R->urlAdd('Blog/listdocs', 'docs');
 $R->urlAdd('Blog/article', 'doc/{!n}');
