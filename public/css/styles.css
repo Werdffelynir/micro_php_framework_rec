@@ -1,0 +1,249 @@
+
+*{}
+html{}
+body{
+    font-family: 'Ubuntu Condensed', 'Ubuntu', sans-serif;
+    font-size: 12px;
+}
+
+h1{
+    padding: 4px 0 10px;
+}
+h2{
+    padding: 3px 0 8px;
+}
+h3{
+    padding: 1px 0 5px;
+}
+h4{
+
+}
+h5{
+
+}
+p{
+    text-indent: 15px;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+
+blockquote{
+    border-left: 2px double #979A9D;
+    margin-left: 20px;
+    padding: 5px 0 5px 10px;
+    font-style: italic;
+    color: #3B3E41;
+    font-family: 'AleksandraC', Consolas, Arial;
+}
+
+ol,ul{
+    margin: 10px 0 10px 25px;
+}
+ol li,ul li{
+    line-height: 18px;
+}
+
+img{
+    border-color: transparent;
+}
+
+/** HEADER */
+.top-menu{
+    background-color: #282B2E;
+    color: #ffffff;
+    text-align: center;
+    height: 20px;
+    box-shadow: 0 0 3px #360000;
+}
+.top-menu a{
+    background-color: #360000;
+    display: inline-block;
+    color: #D3D5D3;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 6px 15px 5px 15px;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #360000;
+}
+.top-menu a:hover{
+    color: #ABD066;
+}
+
+/* COMMON */
+.page{
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+/* CONTENT */
+.content{
+    margin-top: -5px;
+    padding: 25px 100px;
+    box-shadow: inset 0 0 2px 2px rgba(54,0,0,.3);
+    background-color: rgba(178,124,124,0.12);
+    min-height: 600px;
+    text-shadow: -1px 0 1px rgba(178,124,124,0.4);
+}
+.content-admin{
+    margin-top: -5px;
+    padding: 25px 40px;
+    box-shadow: inset 0 0 2px 2px rgba(54,0,0,.3);
+    background-color: rgba(178,124,124,0.12);
+    min-height: 600px;
+    text-shadow: -1px 0 1px rgba(178,124,124,0.4);
+}
+
+/* FOOTER */
+.footer{
+    margin-top: 10px;
+    padding: 10px 0;
+    text-align: center;
+    text-shadow: -1px 0 1px rgba(178,124,124,0.12);
+    font-size: 10px;
+    color: #32aaee ;
+    background-color: #282B2E;
+}
+
+
+/* LOGIN FORM */
+.login-form{
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+}
+.login-form label, .login-form input, .admin-form input{
+	/*display: block;*/
+	border: none;
+}
+.login-form input,.admin-form input, .admin-form textarea{
+	width: 180px;
+	margin-bottom: 4px;
+	padding: 3px 10px;
+	border: 2px solid #360000;
+}
+.login-form input[type=submit], .admin-form input[type=submit]{
+	width: 119px;
+	margin: 15px 0 0 60px;
+	padding: 3px 45px;
+	background-color: #360000;
+	box-shadow: 0 0 3px #360000;
+	color: #D01C00;
+	font-weight: bold;
+	font-size: 12px;
+	cursor: pointer;
+}
+.login-form input[type=submit]:hover, .admin-form input[type=submit]:hover{
+	color: #ABD066;
+}
+.login-form input[type=text], .admin-form input[type=text]{
+	background-color: #FFFFFF;
+}
+.login-form input[type=text]:focus, .login-form input[type=password]:focus {
+	outline: none;
+	box-shadow: 0 0 3px #360000;
+}
+
+
+/* ADMIN PAGE */
+.admin-form{
+}
+
+.admin-form input[type=text]{
+	width: 600px;
+    border: 1px solid #B6B6B6;
+    box-shadow: 0 0 2px rgba(182,182,182,.6);
+}
+
+.admin-form textarea{
+	width: 600px;
+	height: 400px !important;
+}
+
+.admin-form input[type=submit]{
+	margin: 15px 0 0 0;
+}
+.admin-form select{
+    width: 180px;
+    margin-bottom: 4px;
+    padding: 3px 10px;
+    border: 1px solid #B6B6B6;
+    box-shadow: 0 0 2px rgba(182,182,182,.6);
+}
+.admin-form select:focus, .admin-form input[type=submit], .admin-form input[type=text]:focus{
+    outline: none;
+}
+
+
+
+.admin-form select option{
+    padding: 3px 10px;
+    margin-bottom: 5px;
+}
+
+/* ITEM */
+.item{
+	margin: 10px 0 20px 0;
+    padding: 3px;
+}
+
+.item h2 a{
+    text-decoration: none;
+     color: #282B2E;
+ }
+.item h2 a:hover{
+    color: #000066;
+}
+.item .item-panel{
+	font-style: italic;
+	color: #AF6B66;
+}
+.item .item-panel a{
+	color: #000066;
+	font-weight: bold;
+}
+.item-panel{
+    margin-top: 5px;
+    background-color: #AAFFFF;
+    padding: 3px;
+    border: 1px solid #B6B6B6;
+}
+
+
+/* ADMIN EDIT LEFT MENU */
+.edit-menu ul, .edit-menu ol{
+    margin-bottom: 10px;
+}
+.edit-menu ol li{
+    font-size: 10px;
+    line-height: 12px;
+ }
+.edit-menu a {
+    text-decoration: none;
+}
+.edit-menu a:hover {
+    text-decoration: underline;
+}
+
+pre, code{
+    box-shadow: none;
+    text-shadow: none;
+    font-family: Consolas, Courier New, monospace;
+}
+pre code{
+    padding: 5px;
+    background-color: #00002C;
+    font-size: 12px;
+
+}
+
+
+
+
+
+
+
+
+
+
