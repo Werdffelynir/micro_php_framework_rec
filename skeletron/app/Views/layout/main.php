@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Layout</title>
+    <title><?=$this->pageTitle?></title>
     <link rel="stylesheet" href="<?= Rec::$url ?>public/css/grid.css"/>
     <link rel="stylesheet" href="<?= Rec::$url ?>public/css/styles.css"/>
 
@@ -18,16 +18,26 @@
 </head>
 <body>
 
-<div class="top-menu full">
-    <div class="page full menu">
-        <a href="<?= Rec::$url ?>main">Rec framework</a>
-        <a href="<?= Rec::$url ?>docs">Documentation</a>
-        <a href="<?= Rec::$url ?>download">Download</a>
-        <?php if (!$this->auth): ?>
-            <a href="<?= Rec::$url ?>login">Login</a>
-        <?php else: ?>
-            <a href="<?= Rec::$url ?>logout">Logout</a>
-        <?php endif; ?>
+<div class="top-box">
+    <div class="page top-menu">
+
+        <div class="grid-10 first menu">
+            <a href="<?= Rec::$url ?>main">Rec framework</a>
+            <a href="<?= Rec::$url ?>docs">Documentation</a>
+            <a href="<?= Rec::$url ?>download">Download</a>
+            <?php if ($this->auth): ?>
+                <a href="<?= Rec::$url ?>logout">Logout</a>
+            <?php else: ?>
+                <a href="<?= Rec::$url ?>login">Login</a>
+            <?php endif; ?>
+        </div>
+
+        <span class="grid-2 login-user-name" >
+            <?php if ($this->auth): ?>
+                <i>You login as:</i> <strong><?=$this->auth?></strong>
+            <?php endif; ?>
+        </span>
+
     </div>
 </div>
 

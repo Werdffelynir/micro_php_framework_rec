@@ -22,8 +22,7 @@ switch
 index
 
 # USE * * * * * * * * * * *
-info.php
-info.html
+docs.txt
 #snippets
 documentation
 micro_chat

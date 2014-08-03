@@ -1,7 +1,7 @@
 <?php
 
 
-class RecView {
+class RecWidget {
 
 
 

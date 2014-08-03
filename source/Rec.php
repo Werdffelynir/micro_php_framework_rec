@@ -4,7 +4,7 @@ include "RecComponent.php";
 include "RecController.php";
 include "RecPDO.php";
 include "RecModel.php";
-include "RecView.php";
+include "RecWidget.php";
 
 class Rec
 {
@@ -19,14 +19,13 @@ class Rec
     public static $path = null;     // D:/server/domains/test.loc/rec/
     public static $pathApp = null;  // D:/server/domains/test.loc/rec/app/
 
-    public $recUrls = array();
+    private $recUrls = array();
 
     public $request = null;
+    private static $prefix = '';
     public static $controller = null;
     public static $action = null;
     public static $params = null;
-
-    public static $prefix = '';
 
     public function __construct($appPath = null, $debug = true)
     {
@@ -178,6 +177,8 @@ class Rec
     {
         //spl_autoload_register(array($this, '__'));
         spl_autoload_register(array($this, 'autoloadModelsClasses'));
+        spl_autoload_register(array($this, 'autoloadComponentsClasses'));
+        spl_autoload_register(array($this, 'autoloadWidgetsClasses'));
     }
     /**
      * Авто загрузка моделей приложения.
@@ -185,6 +186,18 @@ class Rec
     private function autoloadModelsClasses($className)
     {
         $file = self::$pathApp . 'Models/' . $className . '.php';
+        if (is_file($file))
+            include_once($file);
+    }
+    private function autoloadComponentsClasses($className)
+    {
+        $file = self::$pathApp . 'Components/' . $className . '.php';
+        if (is_file($file))
+            include_once($file);
+    }
+    private function autoloadWidgetsClasses($className)
+    {
+        $file = self::$pathApp . 'Widgets/' . $className . '.php';
         if (is_file($file))
             include_once($file);
     }
@@ -412,12 +425,12 @@ class Request
     }
 
 
-    protected static $expireTime = 86400;
+    protected static $expireTime = 3600;
     public static $cookieDecode  = false;
 
-    public static function cookie($key, $value=null, $expire = null, $domain = null, $path = null)
+    public static function cookie($key, $value=false, $expire = null, $domain = null, $path = null)
     {
-        if($value === null)
+        if($value === false)
             return self::getCookie($key);
         else
             return self::setCookie($key, $value, $expire, $domain, $path);
@@ -432,8 +445,10 @@ class Request
         if ($domain === null)
             $domain = $_SERVER['HTTP_HOST'];
 
-        if ($path === null)
+        if ($path === null);
             $path = str_replace(basename($_SERVER['SCRIPT_FILENAME']), '', $_SERVER['PHP_SELF']);
+
+
 
         if(self::$cookieDecode)
             $value = base64_encode($value);
@@ -443,7 +458,7 @@ class Request
 
     public static function getCookie($key)
     {
-        if (isset($_COOKIE[$key]))
+        if (!empty($_COOKIE[$key]))
         {
             if(self::$cookieDecode)
                 return base64_decode($_COOKIE[$key]);

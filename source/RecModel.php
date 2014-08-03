@@ -666,8 +666,7 @@ class Model
 
 
     /**
-     *  Реконект
-     * @return [type] [description]
+     * Реконект
      */
     public function reset()
     {

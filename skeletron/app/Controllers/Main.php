@@ -51,8 +51,8 @@ class Main extends ControllerBase
 
     public function logout()
     {
-        Request::cookie('auth', '');
-        Request::redirect('login');
+        Request::cookie('auth', null, -3600);
+        Request::redirect('main');
     }
 
 }
