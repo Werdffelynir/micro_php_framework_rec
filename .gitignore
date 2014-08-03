@@ -25,5 +25,5 @@ index
 info.php
 info.html
 #snippets
-documentation/*
-micro_chat/*
+documentation
+micro_chat
