@@ -232,8 +232,7 @@ class Rec
         try {
             throw new Exception("TRUE.");
         } catch (Exception $e) {
-            echo "
-<!doctype html>
+            echo "<!doctype html>
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
@@ -244,7 +243,6 @@ class Rec
             font-family: 'Ubuntu Condensed', 'Ubuntu', sans-serif;
         }
         .box{
-            width:100%;
             min-height: 600px;
             padding: 10px;
             font-size: 11px;
@@ -285,10 +283,8 @@ class Rec
 
     </div>
 </body>
-</html>
-";
-            if ($die)
-                die();
+</html>";
+        if ($die) die();
         }
 
     } // END ExceptionError
